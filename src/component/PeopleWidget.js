@@ -27,12 +27,17 @@ const PeopleWidget = (props) =>{
     const [timeStamp, setTimeStamp] = useState('');
     
 
-    useEffect(() => {
-        setTimeStamp(data?.device.lastHeard);
-        setPeopleIn(data?.device.currentMeasurements[0].value);
-        console.log("Uppdaterad");
-    },[data?.device.lastHeard]);
     
+
+    useEffect(() => {
+        console.log("Uppdaterad");
+        if(data?.device.lastHeard != timeStamp){
+            console.log("Inuti");
+            setPeopleIn(data?.device.currentMeasurements[0].value);
+            setTimeStamp(data?.device.lastHeard);
+        }
+    },[data?.device]);
+
 
     console.log('Hej' +timeStamp);
     console.log(loading);
@@ -44,7 +49,7 @@ const PeopleWidget = (props) =>{
     console.log(typeof(data?.device.currentMeasurements[0].value));
     console.log(props.openingHour);
     if(props.openingHour){
-        return <h6>{peopleIn}</h6>
+        return <h6>{peopleIn} {timeStamp}</h6>
     }else{
         return <h6>Stängt</h6>
     }
