@@ -1,24 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
-
+import PeopleCount from './component/PeopleCount';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 function App() {
+
+  const client = new ApolloClient({
+    uri: 'https://api.datacake.co/graphql/',
+    cache: new InMemoryCache(),
+    headers: {
+      authorization: 'Token dc1e418843f2b9d4c77933d96da47afd1fce6575',
+    }
+  })
   return (
+    <ApolloProvider client={client}>
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <PeopleCount />
       </header>
     </div>
+    </ApolloProvider>
   );
 }
 
