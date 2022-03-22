@@ -14,7 +14,7 @@ const PeopleCount = () =>{
         // This will trigger a rerender every component that uses the useDate hook.
       //setDate(new Date());
       var idag = new Date();
-      var time = idag.getHours();
+      var time = idag.getHours(); //ska vara central european time.
       if(6<time && time<22){
           setOpen(true);
       } else {
