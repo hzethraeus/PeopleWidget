@@ -2,16 +2,13 @@ import React, {useState, useEffect } from 'react';
 import {useQuery, gql} from '@apollo/client';
 
 export  const PEOPLE = gql`
-query Query {
-    device(deviceId:"e255344f-cbc2-46f1-9bdf-671e23ef7077"){
-      
-  lastHeard
-  
-      currentMeasurements (fieldVerboseNames: "counter_A") {
-        
-        value
-      }
-  
+query Query ($timerangestart: String, $timerangeend: String){
+	device(deviceId:"e255344f-cbc2-46f1-9bdf-671e23ef7077"){
+    verboseName
+	lastHeard
+    history(timerangestart: $timerangestart, timerangeend: $timerangeend, fields: "COUNTER_A")
+    
+   
     }
   }
 `;
@@ -24,32 +21,46 @@ Som sedan uppdateras per
 */
 
 const PeopleWidget = (props) =>{
+    const endTime = (new Date()).toISOString();
     
-    const {data} = useQuery(PEOPLE, {
-        pollInterval: 2*60*1000,
+   // const [timeStamp, setTimeStamp] = useState('');
+    console.log(endTime);
+    const {data, error} = useQuery(PEOPLE, {
+        variables: {
+            "timerangestart": "2022-03-23T12:27:03.695952+00:00",
+            "timerangeend": "2022-03-23T14:27:03.695952+00:00"
+            },
+        pollInterval: (60*1000), 
     }); 
+    /*const { loading, error, data } = useQuery(GET_DOG_PHOTO, {
+        variables: { breed },
+        pollInterval: 500,
+      });
+    */
     
+    //const [peopleIn, setPeopleIn] = useState(Number(0));
     
-    const [peopleIn, setPeopleIn] = useState(Number(0));
-    const [timeStamp, setTimeStamp] = useState('');
-    const [tryck, setTryck]=useState('Loading');
-
+    //const [tryck, setTryck]=useState('Loading');
+/*
     useEffect(() => {
         console.log("Uppdaterad");
         if(data?.device.lastHeard !== timeStamp){
-            console.log("Inuti");
+            /*console.log("Inuti");
             //console.log(typeof(data?.device.currentMeasurements[0].value));
             if(typeof(data?.device.currentMeasurements[0].value) === 'number'){
                 setPeopleIn((peopleIn + data?.device.currentMeasurements[0].value));
             }else{
                 console.log("data er ikke nummer");
             }
+
             setTimeStamp(data?.device.lastHeard);
+            
         }
     },[data?.device]);
+  */  
 
 
-    useEffect(() => {
+   /* useEffect(() => {
         const timer = setInterval(() => { // Creates an interval which will update the current data every minute
           // This will trigger a rerender every component that uses the useDate hook.
         setPeopleIn((prev)=>{
@@ -66,16 +77,18 @@ const PeopleWidget = (props) =>{
       return () => {
         clearInterval(timer); // Return a funtion to clear the timer so that it will stop being called on unmount
       }
-    }, []);
+    }, []);*/
 
-    console.log('Hej' +timeStamp);
+    //console.log('Hej' +timeStamp);
     console.log(data);
-    console.log(data?.device.lastHeard);
-    console.log(peopleIn);
+    console.log(error);
+    //console.log(typeof(timeStamp));
+   //console.log(peopleIn);
     console.log(props.openingHour);
     if(props.openingHour){
+        //{peopleIn} {tryck}
         
-        return <h6>{peopleIn} {tryck}</h6>
+        return <h6>Hej</h6>
     }else{
 
         return <h6>Stängt</h6>
