@@ -27,16 +27,12 @@ const PeopleWidget = (props) =>{
     console.log(endTime);
     const {data, error} = useQuery(PEOPLE, {
         variables: {
-            "timerangestart": "2022-03-23T12:27:03.695952+00:00",
-            "timerangeend": "2022-03-23T14:27:03.695952+00:00"
+            "timerangestart": "2022-03-23T11:16:50.277Z",
+            "timerangeend": "2022-03-23T12:16:50.277Z"
             },
         pollInterval: (60*1000), 
     }); 
-    /*const { loading, error, data } = useQuery(GET_DOG_PHOTO, {
-        variables: { breed },
-        pollInterval: 500,
-      });
-    */
+    
     
     //const [peopleIn, setPeopleIn] = useState(Number(0));
     
