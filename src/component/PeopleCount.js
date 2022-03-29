@@ -7,7 +7,7 @@ const PeopleCount = () =>{
     //var today = new Date();
     //var time = today.getHours();
     
-    //const [today, setDate] = useState(new Date()); // Save the current date to be able to trigger an update
+    const [today, setDate] = useState(new Date()); // Save the current date to be able to trigger an update
     const [open, setOpen] = useState(true);
     useEffect(() => {
       const timer = setInterval(() => { // Creates an interval which will update the current data every minute
@@ -17,6 +17,7 @@ const PeopleCount = () =>{
       var time = idag.getHours(); //ska vara central european time.
       if(6<time && time<22){
           setOpen(true);
+          setDate(new Date());
       } else {
           setOpen(false);
       }
@@ -33,7 +34,7 @@ const PeopleCount = () =>{
                 <div className={styles.subText}>Läs mer om datan här</div>
             </div>
             <div>
-            <PeopleWidget openingHour={open} />
+            <PeopleWidget openingHour={open} timeRN={today}/>
             </div>
         </Card>
     )

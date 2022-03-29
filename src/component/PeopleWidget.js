@@ -1,4 +1,4 @@
-import React, {useState, useEffect } from 'react';
+import React from 'react';
 import {useQuery, gql} from '@apollo/client';
 
 export  const PEOPLE = gql`
@@ -13,24 +13,24 @@ query Query ($timerangestart: String, $timerangeend: String){
   }
 `;
 
-/*
-Måste fixa:
-Första gången sidan laddas så måste vi räkna ut hur många som varit där.
-Som sedan uppdateras per  
-
-*/
-
 const PeopleWidget = (props) =>{
-    const endTime = (new Date()).toISOString();
+    //var endTime = (new Date()).toISOString();
     
    // const [timeStamp, setTimeStamp] = useState('');
-    console.log(endTime);
+    console.log(props.timeRN.toISOString());
+    var endTime = props.timeRN;
+    var startTime = new Date();
+    console.log(startTime)
+    startTime.setHours(startTime.getHours() -2);
+    console.log(startTime.toISOString());
+    console.log("hej");
     const {data, error} = useQuery(PEOPLE, {
         variables: {
-            "timerangestart": "2022-03-23T11:16:50.277Z",
-            "timerangeend": "2022-03-23T12:16:50.277Z"
+            
+            "timerangestart": startTime,
+            "timerangeend": endTime
             },
-        pollInterval: (60*1000), 
+        //pollInterval: (60*1000), 
     }); 
     
     
