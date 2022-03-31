@@ -19,7 +19,7 @@ const PeopleWidget = (props) =>{
     console.log("time rn: " + props.timeRN.toISOString());
     var endTime = props.timeRN;
     var startTime =props.timeBF;
-    console.log("time before: " + props.timeBF.toISOString());
+    console.log("time before(-1.5 hours): " + props.timeBF.toISOString());
 
     const {data} = useQuery(PEOPLE, {
         variables: {
@@ -38,7 +38,8 @@ const PeopleWidget = (props) =>{
         console.log(lastHeard);
         const dif = endTime-lastHeard;
         console.log("Dif i MS:  " + dif);
-        if(dif<5400000){
+
+        if(dif<5400000){  // 1.5 hours
             var sum = 0;
             var factor=1;
             obj.forEach(element => {
