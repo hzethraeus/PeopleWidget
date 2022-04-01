@@ -15,6 +15,7 @@ query Query ($timerangestart: String, $timerangeend: String){
 
 const PeopleWidget = (props) =>{
     
+    
    
     console.log("time rn: " + props.timeRN.toISOString());
     var endTime = props.timeRN;
@@ -28,7 +29,7 @@ const PeopleWidget = (props) =>{
             },
     });
 
-    var people='Ej Tillg.';
+    var people='';
 
     if (typeof data !== 'undefined') {
         const obj = JSON.parse(data?.device.history);
@@ -45,8 +46,8 @@ const PeopleWidget = (props) =>{
             obj.forEach(element => {
                 
                 sum+= (element.COUNTER_A*factor);
-                //factor=factor+0.1;
-                //console.log(factor);
+                //factor=factor+0.1;   //for scaling purpose
+                
             });
             console.log(sum);
             if(sum<=6){
@@ -57,6 +58,8 @@ const PeopleWidget = (props) =>{
                 people='Högt';
             }
         }
+    }else{
+        people='Ej tillg.';
     }
 
 //Fixat - C - Convert sum to Tablelookup 
@@ -75,7 +78,6 @@ const PeopleWidget = (props) =>{
     console.log(data);
    
     if(props.openingHour){
-        
         return <h6>{people}</h6>
     }else{
 
