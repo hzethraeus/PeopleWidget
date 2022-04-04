@@ -4,8 +4,11 @@
   justify-content: center;
   display: block;
   width: 270px;
+  height: 110px;
   padding: 20px;
   font-size: 1.5em;
   border-radius: 8px;
   box-shadow: 0 5px 10px #0000000d;
+  color: white;
+  font-size: calc(10px + 2vmin);
 }
