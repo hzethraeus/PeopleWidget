@@ -46,7 +46,7 @@ const PeopleCount = () =>{
     return(
         <Card className={styles.entire}>
             <div className={styles.floatChild}>
-                <div className={styles.mainText}>Besökare just nu</div>
+                <div className={styles.mainText}>Besökare nu</div>
                 <div className={styles.subText}>Läs om datan här</div>
             </div>
             <div>
