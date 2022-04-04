@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {useQuery, gql} from '@apollo/client';
 
 export  const PEOPLE = gql`
@@ -64,15 +64,16 @@ const PeopleWidget = (props) =>{
 
 //Fixat - C - Convert sum to Tablelookup 
 //Fixat - C - Lastheard > 2h = ej tillgänglig (Ej tillg.)
-//C - Städa upp lite kod.
-//C - Hur deploy? Eventuellt snacka med Abbas
-//C - Tidszoner måste fixas
+//Fixat - C - Städa upp lite kod.
+//Abbas visat - C - Hur deploy? Skicka till Linus så fort som möjligt
+//Abbas visat - C - Tidszoner måste fixas
 //Factor for scaling
-//Läs mer om datan här -> Länk till Galiot.io/solutions
+//1 min Läs mer om datan här -> Länk till Galiot.io/solutions
 //CSS ska se exakt likadan ut
 //Optimera query / caching. (Kolla på startTime/endTime)
 
 //abbas@predli.com
+//Linus@kallbadet.com
 
     console.log("Data:");
     console.log(data);
