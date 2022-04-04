@@ -33,6 +33,7 @@ const PeopleCount = () =>{
             timeBefore.setMinutes(timeBefore.getMinutes()-30);
             console.log(timeBefore.toISOString());
             setStartTime(timeBefore);
+            
         } else {
             setOpen(false);
         }
@@ -46,7 +47,7 @@ const PeopleCount = () =>{
         <Card className={styles.entire}>
             <div className={styles.floatChild}>
                 <div className={styles.mainText}>Besökare just nu</div>
-                <div className={styles.subText}>Läs mer om datan här</div>
+                <div className={styles.subText}>Läs om datan här</div>
             </div>
             <div>
             <PeopleWidget openingHour={open} timeRN={today} timeBF={startTime} />
