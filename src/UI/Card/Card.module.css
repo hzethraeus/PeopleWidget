@@ -5,7 +5,8 @@
   display: block;
   width: 270px;
   height: 110px;
-  padding: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
   font-size: 1.5em;
   border-radius: 8px;
   box-shadow: 0 5px 10px #0000000d;
