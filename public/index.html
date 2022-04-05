@@ -29,7 +29,36 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div class="people_widget"></div>
-    
+    <script src="https://extras.pred.li/static/galiot-widget.js"></script>
+    <div id="gl-temperature"></div>
+    <div id="gl-temperature-sm"></div>
+    <div class="gwdg-temp" style="max-width: 300px; background: rgba(0, 0, 0, 0) linear-gradient(90deg, rgba(100, 170, 161, 0.8), rgba(100, 170, 161, 0.8)) repeat scroll 0% 0%; color: rgb(255, 255, 255);">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin: 0 15px;">
+      <div style="text-align: left">
+      <h6 class="gwdg-primary-title-sm" style="color:#fff;">Badtemperatur</h6>
+      <h6 class="gwdg-side-text-sm">Updated 11 minutes ago</h6>
+      </div>
+      <span class="gwdg-temp-text-sm" style="color:#fff;">5.2ºC</span>
+      </div>
+      </div>
+<script>
+    WeatherWidget(
+        {
+            "device-id": "6db5ed17-7d6b-4790-8791-f217fd129cd3",
+            "data-field": "EXTERNALTEMPERATURE",
+            "widget-title": "Badtemperatur",
+            "widget-primary-color": "#fff",
+            "widget-background": "linear-gradient(90deg, rgba(100,170,161,0.8), rgba(100,170,161,0.8))",
+            "widget-max-range": 100,
+            "widget-chart": "None",
+            "widget-text-color": "#fff",
+            "widget-galiot-logo-show": "false"
+        },
+        "gl-temperature-sm"
+    );
+  
+  </script>
+
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

@@ -1,8 +1,11 @@
 .entire {
-  background-color: #3a89f0;
-  width: 220px;
-  height: 110px;
+  width: 240px;
+  padding-right: 15px;
+  padding-left: 15px;
   display: flex;
+  height: 70px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .floatChild {
@@ -12,7 +15,7 @@
   text-align: left;
 }
 .mainText {
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 900;
 }
 .subText {
@@ -20,4 +23,8 @@
   margin: 0;
   padding-top: 5px;
   font-size: 0.45em;
+  text-decoration: underline;
+}
+.subText a {
+  color: white;
 }

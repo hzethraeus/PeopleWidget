@@ -17,10 +17,10 @@ const PeopleWidget = (props) =>{
     
     
    
-    console.log("time rn: " + props.timeRN.toISOString());
+    
     var endTime = props.timeRN;
     var startTime =props.timeBF;
-    console.log("time before(-1.5 hours): " + props.timeBF.toISOString());
+    
 
     const {data} = useQuery(PEOPLE, {
         variables: {
@@ -33,12 +33,10 @@ const PeopleWidget = (props) =>{
 
     if (typeof data !== 'undefined') {
         const obj = JSON.parse(data?.device.history);
-        console.log(obj);
-
+      
         const lastHeard =new Date(data?.device.lastHeard);
-        console.log(lastHeard);
         const dif = endTime-lastHeard;
-        console.log("Dif i MS:  " + dif);
+        
 
         if(dif<5400000){  // 1.5 hours
             var sum = 0;
@@ -62,21 +60,12 @@ const PeopleWidget = (props) =>{
         people='Ej tillg.';
     }
 
-//Fixat - C - Convert sum to Tablelookup 
-//Fixat - C - Lastheard > 2h = ej tillgänglig (Ej tillg.)
-//Fixat - C - Städa upp lite kod.
-//Abbas visat - C - Hur deploy? Skicka till Linus så fort som möjligt
+
 //Abbas visat - C - Tidszoner måste fixas
 //Factor for scaling
-//1 min Läs mer om datan här -> Länk till Galiot.io/solutions
 //CSS ska se exakt likadan ut
 //Optimera query / caching. (Kolla på startTime/endTime)
 
-//abbas@predli.com
-//Linus@kallbadet.com
-
-    console.log("Data:");
-    console.log(data);
    
     if(props.openingHour){
         return <h6>{people}</h6>

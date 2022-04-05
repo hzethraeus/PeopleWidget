@@ -4,8 +4,6 @@ import styles from './PeopleCount.module.css';
 import PeopleWidget from './PeopleWidget';
 
 const PeopleCount = () =>{
-    //var today = new Date();
-    //var time = today.getHours();
     
     const [today, setDate] = useState(new Date()); // Save the current date to be able to trigger an update
     const [open, setOpen] = useState(true);
@@ -31,7 +29,7 @@ const PeopleCount = () =>{
             var timeBefore= new Date();
             timeBefore.setHours(timeBefore.getHours()-1);
             timeBefore.setMinutes(timeBefore.getMinutes()-30);
-            console.log(timeBefore.toISOString());
+            
             setStartTime(timeBefore);
             
         } else {
@@ -46,8 +44,14 @@ const PeopleCount = () =>{
     return(
         <Card className={styles.entire}>
             <div className={styles.floatChild}>
-                <div className={styles.mainText}>Besökare nu</div>
-                <div className={styles.subText}>Läs om datan här</div>
+                <div className={styles.mainText}>Besökare just nu</div>
+                
+                <div className={styles.subText}>
+                <a href="https://www.galiot.io/solutions" target="_blank">
+                  Läs om datan här
+                  </a>
+                  </div>
+                
             </div>
             <div>
             <PeopleWidget openingHour={open} timeRN={today} timeBF={startTime} />
