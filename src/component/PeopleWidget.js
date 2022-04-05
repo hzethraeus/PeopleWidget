@@ -68,10 +68,10 @@ const PeopleWidget = (props) =>{
 
    
     if(props.openingHour){
-        return <h6>{people}</h6>
+        return <div>{people}</div>
     }else{
 
-        return <h6>Stängt</h6>
+        return <div>Stängt</div>
     }
 }
 

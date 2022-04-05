@@ -1,11 +1,8 @@
 .entire {
-  width: 240px;
-  padding-right: 15px;
-  padding-left: 15px;
-  display: flex;
+  width: 250px;
   height: 70px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  display: flex;
+  padding: 10px;
 }
 
 .floatChild {
@@ -16,7 +13,7 @@
 }
 .mainText {
   font-size: 18px;
-  font-weight: 900;
+  font-weight: 700;
 }
 .subText {
   font-weight: 400;
@@ -30,4 +27,7 @@
 }
 .responseText {
   color: white;
+  font-size: 18px;
+  font-weight: 900;
+  padding-right: 15px;
 }
