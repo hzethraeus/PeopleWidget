@@ -44,7 +44,7 @@ const PeopleCount = () =>{
     return(
         <Card className={styles.entire}>
             <div className={styles.floatChild}>
-                <div className={styles.mainText}>Besökare just nu</div>
+                <div className={styles.mainText}>Besökare {"\n"}just nu</div>
                 
                 <div className={styles.subText}>
                 <a href="https://www.galiot.io/solutions" target="_blank">
@@ -53,7 +53,7 @@ const PeopleCount = () =>{
                   </div>
                 
             </div>
-            <div>
+            <div className={styles.responseText}>
             <PeopleWidget openingHour={open} timeRN={today} timeBF={startTime} />
             </div>
         </Card>
