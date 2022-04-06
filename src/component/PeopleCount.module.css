@@ -3,6 +3,7 @@
   height: 90px;
   display: flex;
   padding: 10px;
+  font-family: "Open Sans", sans-serif;
 }
 
 .floatChild {
@@ -12,7 +13,7 @@
 }
 .mainText {
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 800;
 }
 .subText {
   font-weight: 400;
@@ -26,7 +27,7 @@
 }
 .responseText {
   color: white;
-  font-size: 18px;
-  font-weight: 900;
+  font-size: 20px;
+  font-weight: 1000;
   padding-right: 10px;
 }
