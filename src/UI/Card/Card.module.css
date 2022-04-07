@@ -1,10 +1,9 @@
 .card {
-  background-color: rgba(129, 181, 250, 0.76);
+  background-color: rgba(129, 181, 250, 0.822);
   align-items: center;
   justify-content: center;
   display: block;
   max-width: 300px;
-  margin-top: 15px;
   margin-bottom: 15px;
   font-size: 1.5em;
   border-radius: 8px;
