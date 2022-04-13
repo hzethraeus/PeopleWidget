@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Card from '../UI/Card/Card';
 import styles from './PeopleCount.module.css';
 import PeopleWidget from './PeopleWidget';
-
+import ReactTooltip from "react-tooltip";
 const PeopleCount = () =>{
     
     const [today, setDate] = useState(new Date()); // Save the current date to be able to trigger an update
@@ -14,7 +14,7 @@ const PeopleCount = () =>{
       setDate(new Date());
       var timeBefore= new Date();
       timeBefore.setHours(timeBefore.getHours()-1);
-      timeBefore.setMinutes(timeBefore.getMinutes()-30);
+      timeBefore.setMinutes(timeBefore.getMinutes()-5);
       setStartTime(timeBefore);
 
 
@@ -56,6 +56,13 @@ const PeopleCount = () =>{
             <div className={styles.responseText}>
             <PeopleWidget openingHour={open} timeRN={today} timeBF={startTime} />
             </div>
+            <div className={styles.tooltip} data-tip data-for="peopleTip"><a>&nbsp;?&nbsp;</a></div>
+        <ReactTooltip id="peopleTip" place="bottom" effect="solid">
+        Antalet besökare i Kallbadet (herrbastu och dambastu); <br />
+        Lågt = Mindre än 6 besökare <br />
+        Medel = Mellan 6 och 12 besökare <br />
+        Högt = Fler än 12 besökare <br />
+    </ReactTooltip>
         </Card>
     )
 };
