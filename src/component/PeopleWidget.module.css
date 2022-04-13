@@ -1,0 +1,10 @@
+.tooltip {
+  float: right;
+  height: 0px;
+}
+.tooltip a {
+  font-size: 10px;
+  background-color: rgba(93, 163, 255, 0.808);
+  border-radius: 10px;
+  border: 2px solid rgb(83, 115, 156);
+}

@@ -1,5 +1,7 @@
 import React from 'react';
 import {useQuery, gql} from '@apollo/client';
+import ReactTooltip from "react-tooltip";
+import styles from './PeopleWidget.module.css';
 
 export  const PEOPLE = gql`
 query Query ($timerangestart: String, $timerangeend: String){
@@ -41,6 +43,7 @@ const PeopleWidget = (props) =>{
         if(dif<5400000){  // 1.5 hours
             var sum = 0;
             var factor=1;
+
             obj.forEach(element => {
                 
                 sum+= (element.COUNTER_A*factor);
@@ -66,9 +69,17 @@ const PeopleWidget = (props) =>{
 //CSS ska se exakt likadan ut
 //Optimera query / caching. (Kolla på startTime/endTime)
 
-   
+   //{people}
     if(props.openingHour){
-        return <div>{people}</div>
+        return <div className={styles.entireResponse}>{people} 
+        <div className={styles.tooltip} data-tip data-for="peopleTip"><a>?</a></div>
+        <ReactTooltip id="peopleTip" place="bottom" effect="solid">
+        Antalet besökare i Kallbadet (herrbastu och dambastu); <br />
+        Lågt = Mindre än 6 besökare <br />
+        Medel = Mellan 6 och 12 besökare <br />
+        Högt = Fler än 12 besökare <br />
+    </ReactTooltip>
+        </div>
     }else{
 
         return <div>Stängt</div>

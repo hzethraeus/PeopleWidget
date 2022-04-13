@@ -28,7 +28,7 @@ const PeopleCount = () =>{
             setDate(new Date());
             var timeBefore= new Date();
             timeBefore.setHours(timeBefore.getHours()-1);
-            timeBefore.setMinutes(timeBefore.getMinutes()-30);
+            timeBefore.setMinutes(timeBefore.getMinutes()-5);
             
             setStartTime(timeBefore);
             
