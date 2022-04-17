@@ -16,12 +16,9 @@ query Query ($timerangestart: String, $timerangeend: String){
 
 const PeopleWidget = (props) =>{
     
-    
-   
-    
     var endTime = props.timeRN;
     var startTime =props.timeBF;
-    //console.log(endTime);
+    
 
     const {data} = useQuery(PEOPLE, {
         variables: {
@@ -72,7 +69,6 @@ const PeopleWidget = (props) =>{
     if(props.openingHour){
         return <div>{people}</div>
     }else{
-
         return <div>Stängt</div>
     }
 }
