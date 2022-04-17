@@ -14,7 +14,7 @@
 }
 .mainText {
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 500;
 }
 .subText {
   font-weight: 400;
@@ -38,6 +38,7 @@
 }
 .tooltip a {
   font-size: 10px;
+  font-weight: 1.5em;
   color: white;
   border-radius: 10px;
   background-color: rgba(91, 147, 222, 0.822);

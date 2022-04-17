@@ -21,7 +21,7 @@ const PeopleWidget = (props) =>{
     
     var endTime = props.timeRN;
     var startTime =props.timeBF;
-    
+    //console.log(endTime);
 
     const {data} = useQuery(PEOPLE, {
         variables: {
@@ -34,7 +34,7 @@ const PeopleWidget = (props) =>{
 
     if (typeof data !== 'undefined') {
         const obj = JSON.parse(data?.device.history);
-        
+        //console.log(obj);
         const lastHeard =new Date(data?.device.lastHeard);
         const dif = endTime-lastHeard;
         
@@ -68,10 +68,9 @@ const PeopleWidget = (props) =>{
 //CSS ska se exakt likadan ut
 //Optimera query / caching. (Kolla på startTime/endTime)
 
-   //{people}
+   
     if(props.openingHour){
-        return <div>{people} 
-        </div>
+        return <div>{people}</div>
     }else{
 
         return <div>Stängt</div>
