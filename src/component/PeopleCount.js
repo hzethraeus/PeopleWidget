@@ -3,7 +3,7 @@ import Card from '../UI/Card/Card';
 import styles from './PeopleCount.module.css';
 import PeopleWidget from './PeopleWidget';
 import ReactTooltip from "react-tooltip";
-import { Settings, DateTime, Info } from "luxon";
+
 
 
 
@@ -25,7 +25,7 @@ const PeopleCount = () =>{
 
       var idag = new Date();
       var time = idag.getHours(); //ska vara central european time.
-      console.log(time.valueOf());
+      //console.log(time.valueOf());
       if(6<time.valueOf() && time.valueOf()<22){
           setOpen(true);
           setDate(new Date());
@@ -44,7 +44,7 @@ const PeopleCount = () =>{
         //setDate(new Date());
         var idag = new Date();
         var time = idag.getHours(); //ska vara central european time.
-        console.log(time.valueOf());
+        //console.log(time.valueOf());
         if(6<time.valueOf() && time.valueOf()<22){
             setOpen(true);
             setDate(new Date());
@@ -64,6 +64,8 @@ const PeopleCount = () =>{
   }, []);
   
     return(
+      <div>
+        <button className={styles.trollol}>Hej</button>
         <Card className={styles.entire}>
             <div className={styles.floatChild}>
                 <div className={styles.mainText}>Besökare just nu</div>
@@ -86,6 +88,7 @@ const PeopleCount = () =>{
         Högt = Fler än 12 besökare <br />
     </ReactTooltip>
         </Card>
+        </div>
     )
 };
 

@@ -1,4 +1,5 @@
 .entire {
+  margin-top: -15px;
   width: 270px;
   height: 90px;
   display: flex;
@@ -10,10 +11,10 @@
   float: 1;
   width: 70%;
   text-align: left;
-  padding-left: 7px;
+  padding-left: 5px;
 }
 .mainText {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
 }
 .subText {
@@ -43,4 +44,8 @@
   border-radius: 10px;
   background-color: rgba(91, 147, 222, 0.822);
   border: 1px solid rgb(196, 215, 240);
+}
+
+.trollol {
+  margin: 50px;
 }
