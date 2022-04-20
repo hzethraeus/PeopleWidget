@@ -64,8 +64,8 @@ const PeopleCount = () =>{
   }, []);
   
     return(
-      <div>
-        <button className={styles.trollol}>Hej</button>
+     
+        
         <Card className={styles.entire}>
             <div className={styles.floatChild}>
                 <div className={styles.mainText}>Besökare just nu</div>
@@ -88,7 +88,7 @@ const PeopleCount = () =>{
         Högt = Fler än 12 besökare <br />
     </ReactTooltip>
         </Card>
-        </div>
+      
     )
 };
 
