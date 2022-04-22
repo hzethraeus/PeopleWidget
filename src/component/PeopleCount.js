@@ -83,8 +83,8 @@ const PeopleCount = () =>{
             <div className={styles.tooltip} data-tip data-for="peopleTip"><a>&nbsp;?&nbsp;</a></div>
         <ReactTooltip id="peopleTip" place="bottom" effect="solid">
         Besökare i Kallbadet (herrbastu och dambastu): <br />
-        Lågt = Mindre än 6 besökare <br />
-        Medel = Mellan 6 och 12 besökare <br />
+        Lågt = 6 eller färre besökare <br />
+        Medel = Mellan 7 och 12 besökare <br />
         Högt = Fler än 12 besökare <br />
     </ReactTooltip>
         </Card>

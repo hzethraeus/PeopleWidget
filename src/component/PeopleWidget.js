@@ -52,7 +52,7 @@ const PeopleWidget = (props) =>{
             }else if(sum<=12){
                 people='Medel';
             }else{
-                people='Högt';
+                people='Högt ';
             }
         }
     }else{
