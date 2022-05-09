@@ -46,13 +46,13 @@ const PeopleWidget = (props) =>{
                 //factor=factor+0.1;   //for scaling purpose
                 
             });
-            console.log(sum);
+            //console.log(sum);
             if(sum<=6){
                 people='Lågt';
             }else if(sum<=12){
                 people='Medel';
             }else{
-                people='Högt ';
+                people='Högt';
             }
         }
     }else{
