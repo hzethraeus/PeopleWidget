@@ -4,9 +4,6 @@ import styles from './PeopleCount.module.css';
 import PeopleWidget from './PeopleWidget';
 import ReactTooltip from "react-tooltip";
 
-
-
-
 const PeopleCount = () =>{
     
     const [today, setDate] = useState(new Date()); // Save the current date to be able to trigger an update
@@ -41,10 +38,10 @@ const PeopleCount = () =>{
 
       const timer = setInterval(() => { // Creates an interval which will update the current data every minute
           // This will trigger a rerender every component that uses the useDate hook.
-        //setDate(new Date());
+        
         var idag = new Date();
         var time = idag.getHours(); //ska vara central european time.
-        //console.log(time.valueOf());
+        
         if(6<time.valueOf() && time.valueOf()<22){
             setOpen(true);
             setDate(new Date());
