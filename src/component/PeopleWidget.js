@@ -19,7 +19,6 @@ const PeopleWidget = (props) =>{
     var endTime = props.timeRN;
     var startTime =props.timeBF;
     
-
     const {data} = useQuery(PEOPLE, {
         variables: {
             "timerangestart": startTime,
@@ -35,7 +34,6 @@ const PeopleWidget = (props) =>{
         const lastHeard =new Date(data?.device.lastHeard);
         const dif = endTime-lastHeard;
         
-
         if(dif<5400000){  // 1.5 hours
             var sum = 0;
             var factor=1;
@@ -60,12 +58,6 @@ const PeopleWidget = (props) =>{
     }
 
 
-//Abbas visat - C - Tidszoner måste fixas
-//Factor for scaling
-//CSS ska se exakt likadan ut
-//Optimera query / caching. (Kolla på startTime/endTime)
-
-   
     if(props.openingHour){
         return <div>{people}</div>
     }else{
